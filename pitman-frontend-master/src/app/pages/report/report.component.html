@@ -1,0 +1,31 @@
+<div class="row">
+   <div class="col-md-5 mx-auto my-5" *ngFor="let p of posts">
+     <mat-card class="mat-elevation-z2">
+       <mat-card-title>{{ p.message }}</mat-card-title>
+       <mat-card-content>
+         <div class="container">
+           <div class="row">
+             <strong class="col-md-4">Post Date:</strong>
+             <p class="col-md-8">{{ p.createdTime | date:'medium' }}</p>
+           </div>
+           <div class="row">
+             <strong class="col-md-4">Topic(s):</strong>
+             <p class="col-md-8" *ngFor="let t of p.topic">{{ t }}</p>
+           </div>
+           <div class="row">
+             <strong class="col-md-4">Sentiment of the post: </strong>
+             <p class="col-md-8" *ngIf="p.messageSentiment == 'pos' ">Positive</p>
+             <p class="col-md-9" ngIf="p.messageSentiment == 'neg' ">Negative</p>
+           </div>
+           <strong>Sentiment % of the replies</strong>
+           <mat-progress-bar mode="determinate" [value]="p.repliesSentiment.pos100"></mat-progress-bar>
+           <div style="margin: 2%; padding-bottom: 5%">
+             <p style="float: left">{{ (p.repliesSentiment.pos100).toFixed(2) }}% positive</p>
+             <p style="float: right">{{ (p.repliesSentiment.neg100).toFixed(2) }}% negative</p>
+           </div>
+         </div>
+       </mat-card-content>
+ 
+     </mat-card>
+   </div>
+ </div>

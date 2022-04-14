@@ -1,0 +1,83 @@
+<div>
+  <h1 style="margin-top: 20px;">Please Define Your Social Network Accounts Below</h1>
+
+  <div class="container">
+    <div class="col-md-6" style="margin: 10px; ">
+      <mat-card style="background-color: #3578eb; height: 200px; color: whitesmoke;">
+        <mat-card-title style="color: whitesmoke;">Facebook
+          <div style="float:right;">
+            <img width="42" style="border-radius: 50%; "
+              src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" />
+          </div>
+        </mat-card-title>
+        <mat-card-content *ngIf="!isLoggedin" (click)="facebookLogin()" 
+        style="justify-content: center;
+        align-content: center;
+        align-items: center;">
+          <h1 style="width: 100%; height: 100%; margin: 6%; margin-top: 8%;">
+            Press Here to Login with Facebook
+          </h1>
+        </mat-card-content>
+        <mat-card-content *ngIf="isLoggedin">
+          
+          <div style="float: left; margin-top: 5%;">
+            <img width="60" style="float: left; border-radius: 50%" [src]="profilePhotoLink" />
+            <h2 style="float: right; margin-left:12px; align-items: center; justify-content: center; margin-top: 10%;">
+              {{ username }}</h2>
+          </div>
+          <div style="float: right; margin-top: 16%;">
+            <button mat-stroked-button (click)="addToQueue('Facebook')">
+              <mat-icon>analytics</mat-icon>
+              Add to Analyzing Queue
+            </button>
+          </div>
+
+        </mat-card-content>
+
+
+      </mat-card>
+    </div>
+    <div class="col-md-6" style="margin: 10px;">
+      <mat-card style="background-color: #71a8d9; height: 200px; color: whitesmoke;">
+        <mat-card-title style="color: whitesmoke;">Twitter
+          <div style="float:right;">
+            <img width="72" height="42" style="border-radius: 50%; "
+              src="https://novamarka.com.tr/blog/wp-content/uploads/2020/05/Twitter-yorum-kapatma-%C3%B6zelli%C4%9Fi.jpg" />
+          </div></mat-card-title>
+        <mat-card-content *ngIf="!isTwitterNameEntered">
+          <mat-form-field appearance="outline" style="color: blanchedalmond; margin-top: 30px;">
+            <mat-label style="color: blanchedalmond;">Twitter Username</mat-label>
+            <input matInput #username style="color: blanchedalmond;">
+          </mat-form-field>
+          <div style="float: right; margin-top: 16%;">
+            <button mat-stroked-button (click)="twitterUsername(username.value)">
+              <mat-icon>save</mat-icon>
+              Save
+            </button>
+          </div>
+
+        </mat-card-content>
+        <mat-card-content *ngIf="isTwitterNameEntered">
+          
+          <div style="float: left; margin-top: 5%;">
+            
+            <h2 style="float: right; align-items: center; justify-content: center; margin-top: 12%;">
+              @{{
+              twitterUser }}</h2>
+          </div>
+          
+            <div style="float: right; margin-top: 16%;">
+              <button mat-stroked-button (click)="addToQueue('Twitter')">
+                <mat-icon>analytics</mat-icon>
+                Add to Analyzing Queue
+              </button>
+            </div>
+
+        </mat-card-content>
+
+
+      </mat-card>
+    </div>
+
+  </div>
+</div>

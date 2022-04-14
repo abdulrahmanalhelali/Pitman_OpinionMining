@@ -1,0 +1,58 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:host {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .container{
+    background-image: url(../../../assets/images/bosphorus.jpeg);
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    background-size: 100% auto;
+    background-size: auto 100%;
+    width: 3000px;
+    height: 1048px;
+    display: flex;
+    justify-content: center;
+}
+
+.mat-card{
+    width: 30%;
+    height: 300px;
+    margin: 100px 0px;
+}
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  a{
+      color: #4153af
+  }
+
+  mat-card-title{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+  }
+
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+  }
